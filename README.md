@@ -24,7 +24,7 @@ This project is a simple and efficient web application for combining multiple PD
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/combine-pdfs-webapp.git
+   git clone https://github.com/GAP-Pathum/PDF-Combiner.git
    ```
 2. **Navigate to the project directory**
    ```bash
