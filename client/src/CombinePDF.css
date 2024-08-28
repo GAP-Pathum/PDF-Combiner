@@ -1,0 +1,129 @@
+/* Container for the form and preview */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: auto;
+    height: calc(100vh - 40px); /* Full viewport height minus padding */
+}
+
+/* Style for the left-side of the container */
+.left-side {
+    flex: 1;
+    margin-right: 25px;
+}
+
+/* Style for the form element */
+.form {
+    margin-bottom: 20px;
+}
+
+/* Style for the list of selected PDFs */
+.pdf-list {
+    margin-bottom: 20px;
+}
+
+/* Remove default list styles */
+.pdf-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style for each PDF item */
+.pdf-list li {
+    margin-bottom: 10px;
+}
+
+/* Style for PDF links */
+.pdf-list a {
+    text-decoration: none;
+    color: blue;
+}
+
+/* Style for buttons */
+.buttons {
+    margin-top: 20px;
+}
+
+/* Style for buttons with spacing */
+.buttons button {
+    margin-right: 10px;
+}
+
+/* Style for the right-side (preview) */
+.right-side {
+    flex: 1;
+    width: 1000px;
+    border: 1px solid #ccc;
+    height: 90%;
+    overflow: hidden; /* Hide overflow for better display */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.container.loading .left-side,
+.container.loading .right-side {
+    display: none; /* Hide all content except the loader when loading */
+}
+
+.loader-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensure it is above other content */
+}
+
+.loader {
+    --r1: 154%;
+    --r2: 68.5%;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(var(--r1) var(--r2) at top, #0000 79.5%, #269af2 80%),
+        radial-gradient(var(--r1) var(--r2) at bottom, #269af2 79.5%, #0000 80%),
+        radial-gradient(var(--r1) var(--r2) at top, #0000 79.5%, #269af2 80%),
+        #ccc;
+    background-size: 50.5% 220%;
+    background-position: -100% 0%, 0% 0%, 100% 0%;
+    background-repeat: no-repeat;
+    animation: l9 2s infinite linear;
+    margin-bottom: 20px; /* Space between loader and text */
+}
+
+.loading-text {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+
+@keyframes l9 {
+    33% {
+        background-position: 0% 33%, 100% 33%, 200% 33%;
+    }
+    66% {
+        background-position: -100% 66%, 0% 66%, 100% 66%;
+    }
+    100% {
+        background-position: 0% 100%, 100% 100%, 200% 100%;
+    }
+}
+
+footer {
+    width: 97%;
+    text-align: center;
+    padding: 10px 0;
+    color: #bbb;
+    font-size: 14px;
+    bottom: 1%;
+    position: absolute;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+  }
